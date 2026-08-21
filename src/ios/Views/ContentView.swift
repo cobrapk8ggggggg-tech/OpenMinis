@@ -6756,6 +6756,7 @@ private struct LanguageOption: Identifiable {
 private let supportedLanguages: [LanguageOption] = [
     LanguageOption(id: "",       name: "System", flag: ""),
     LanguageOption(id: "en",     name: "English", flag: "🇺🇸"),
+    LanguageOption(id: "ar",     name: "العربية", flag: "🇸🇦"),
     LanguageOption(id: "zh-Hans", name: "简体中文", flag: "🇨🇳"),
     LanguageOption(id: "ja",     name: "日本語", flag: "🇯🇵"),
     LanguageOption(id: "ko",     name: "한국어", flag: "🇰🇷"),

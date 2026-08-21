@@ -1,0 +1,24 @@
+/* Info.plist permission strings — Arabic */
+
+"NSLocationWhenInUseUsageDescription" = "يستخدم Minis موقعك لتسجيل مكان بدء جلسات الوكيل في سجل الجلسات.";
+"NSLocationAlwaysAndWhenInUseUsageDescription" = "يستخدم Minis الموقع في الخلفية للمساعدة في إبقاء مهام الوكيل قيد التشغيل عندما يكون التطبيق في الخلفية. تُستخدم بيانات الموقع فقط لتسجيل سجل اتصال الجلسة.";
+"NSCalendarsUsageDescription" = "يستخدم Minis الوصول إلى التقويم حتى يتمكن وكيل الذكاء الاصطناعي من الاستعلام عن جدولك والتحقق من التوفر وإنشاء الأحداث نيابةً عنك.";
+"NSCalendarsFullAccessUsageDescription" = "يستخدم Minis الوصول إلى التقويم حتى يتمكن وكيل الذكاء الاصطناعي من الاستعلام عن جدولك والتحقق من التوفر وإنشاء الأحداث نيابةً عنك.";
+"NSRemindersUsageDescription" = "يستخدم Minis الوصول إلى التذكيرات حتى يتمكن وكيل الذكاء الاصطناعي من الاستعلام عنها وإنشائها نيابةً عنك.";
+"NSRemindersFullAccessUsageDescription" = "يستخدم Minis الوصول إلى التذكيرات حتى يتمكن وكيل الذكاء الاصطناعي من الاستعلام عنها وإنشائها نيابةً عنك.";
+"NSCameraUsageDescription" = "يحتاج Minis إلى الوصول إلى الكاميرا لالتقاط صور لمحادثات الذكاء الاصطناعي.";
+"NSPhotoLibraryUsageDescription" = "يحتاج Minis إلى الوصول إلى مكتبة الصور لإرفاق الصور بمحادثات الذكاء الاصطناعي.";
+"NSPhotoLibraryAddUsageDescription" = "يحتاج Minis إلى إذن لحفظ مقاطع الفيديو والصور في مكتبة الصور لديك.";
+"NSHealthShareUsageDescription" = "يستخدم Minis الوصول إلى HealthKit حتى يتمكن وكيل الذكاء الاصطناعي من قراءة بياناتك الصحية مثل الخطوات ونبض القلب والنوم والتمارين نيابةً عنك.";
+"NSHealthUpdateUsageDescription" = "يستخدم Minis صلاحية الكتابة في HealthKit حتى يتمكن وكيل الذكاء الاصطناعي من تسجيل بيانات صحية مثل الوزن والماء نيابةً عنك.";
+"NSContactsUsageDescription" = "يستخدم Minis الوصول إلى جهات الاتصال حتى يتمكن وكيل الذكاء الاصطناعي من البحث في جهات اتصالك وعرضها وإدارتها نيابةً عنك.";
+"NSAppleMusicUsageDescription" = "يستخدم Minis الوصول إلى مكتبة الوسائط حتى يتمكن وكيل الذكاء الاصطناعي من البحث في مكتبة الموسيقى والتحكم في التشغيل نيابةً عنك.";
+"NSMicrophoneUsageDescription" = "يحتاج Minis إلى الوصول إلى الميكروفون لإدخال الصوت وتحويله إلى نص في المحادثة.";
+"NSSpeechRecognitionUsageDescription" = "يستخدم Minis التعرف على الكلام لتحويل صوتك إلى رسائل نصية.";
+"NSHomeKitUsageDescription" = "يستخدم Minis الوصول إلى HomeKit حتى يتمكن وكيل الذكاء الاصطناعي من الاستعلام عن ملحقات المنزل الذكي والتحكم بها نيابةً عنك.";
+"NSAlarmKitUsageDescription" = "يستخدم Minis AlarmKit حتى يتمكن وكيل الذكاء الاصطناعي من ضبط المنبهات والمؤقتات نيابةً عنك.";
+"NSLocalNetworkUsageDescription" = "يحتاج Minis إلى الوصول إلى الشبكة المحلية لخادم التصحيح وللسماح للوكيل بالاتصال بالخدمات المحلية.";
+"NSBluetoothAlwaysUsageDescription" = "يستخدم Minis البلوتوث حتى يتمكن وكيل الذكاء الاصطناعي من البحث عن أجهزة BLE القريبة والاتصال بها والتواصل معها نيابةً عنك.";
+"NSBluetoothPeripheralUsageDescription" = "يستخدم Minis البلوتوث حتى يتمكن وكيل الذكاء الاصطناعي من البحث عن أجهزة BLE القريبة والاتصال بها والتواصل معها نيابةً عنك.";
+"NFCReaderUsageDescription" = "يستخدم Minis تقنية NFC حتى يتمكن وكيل الذكاء الاصطناعي من قراءة وسوم NFC وكتابتها نيابةً عنك.";
+"NSFaceIDUsageDescription" = "يستخدم Minis Face ID لحماية جلسات المحادثة المقفلة حتى لا يطّلع عليها إلا أنت.";

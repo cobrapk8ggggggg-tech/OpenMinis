@@ -6,6 +6,21 @@ import UserNotifications
 private let shareLog = AppLogger(category: "Share")
 private let lifecycleLog = AppLogger(category: "Lifecycle")
 
+private enum AppLanguageDirection {
+    static func isRTL(_ code: String?) -> Bool {
+        guard let code, !code.isEmpty else { return Locale.characterDirection(forLanguage: Locale.current.language.languageCode?.identifier ?? "en") == .rightToLeft }
+        return Locale.characterDirection(forLanguage: Locale(identifier: code).language.languageCode?.identifier ?? code) == .rightToLeft
+    }
+
+    static func layoutDirection(for code: String?) -> LayoutDirection {
+        isRTL(code) ? .rightToLeft : .leftToRight
+    }
+
+    static func semanticContentAttribute(for code: String?) -> UISemanticContentAttribute {
+        isRTL(code) ? .forceRightToLeft : .forceLeftToRight
+    }
+}
+
 // MARK: - Bundle Language Override
 
 /// Overrides `Bundle.main.localizedString(forKey:value:table:)` so that
@@ -36,6 +51,13 @@ extension Bundle {
 
     /// Sets the override language. Pass `nil` or `""` to revert to system language.
     static func setLanguage(_ code: String?) {
+        defer {
+            let semantic = AppLanguageDirection.semanticContentAttribute(for: code)
+            UIView.appearance().semanticContentAttribute = semantic
+            UINavigationBar.appearance().semanticContentAttribute = semantic
+            UITabBar.appearance().semanticContentAttribute = semantic
+        }
+
         guard let code, !code.isEmpty,
               let path = Bundle.main.path(forResource: code, ofType: "lproj"),
               let bundle = Bundle(path: path) else {
@@ -198,6 +220,7 @@ struct MinisApp: App {
                     appearanceMode == 1 ? .light : appearanceMode == 2 ? .dark : nil
                 )
                 .environment(\.locale, appLanguage.isEmpty ? .current : Locale(identifier: appLanguage))
+                .environment(\.layoutDirection, AppLanguageDirection.layoutDirection(for: appLanguage.isEmpty ? nil : appLanguage))
                 .dynamicTypeSize(fontSettings.appBaseScale.dynamicTypeSize)
                 .onOpenURL { url in
                     shareLog.info("[Share] onOpenURL: \(url.absoluteString)")
