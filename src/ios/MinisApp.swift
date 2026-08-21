@@ -6,6 +6,21 @@ import UserNotifications
 private let shareLog = AppLogger(category: "Share")
 private let lifecycleLog = AppLogger(category: "Lifecycle")
 
+private enum AppLanguageDirection {
+    static func isRTL(_ code: String?) -> Bool {
+        guard let code, !code.isEmpty else { return Locale.characterDirection(forLanguage: Locale.current.language.languageCode?.identifier ?? "en") == .rightToLeft }
+        return Locale.characterDirection(forLanguage: Locale(identifier: code).language.languageCode?.identifier ?? code) == .rightToLeft
+    }
+
+    static func layoutDirection(for code: String?) -> LayoutDirection {
+        isRTL(code) ? .rightToLeft : .leftToRight
+    }
+
+    static func semanticContentAttribute(for code: String?) -> UISemanticContentAttribute {
+        isRTL(code) ? .forceRightToLeft : .forceLeftToRight
+    }
+}
+
 // MARK: - Bundle Language Override
 
 /// Overrides `Bundle.main.localizedString(forKey:value:table:)` so that
@@ -36,6 +51,13 @@ extension Bundle {
 
     /// Sets the override language. Pass `nil` or `""` to revert to system language.
     static func setLanguage(_ code: String?) {
+        defer {
+            let semantic = AppLanguageDirection.semanticContentAttribute(for: code)
+            UIView.appearance().semanticContentAttribute = semantic
+            UINavigationBar.appearance().semanticContentAttribute = semantic
+            UITabBar.appearance().semanticContentAttribute = semantic
+        }
+
         guard let code, !code.isEmpty,
               let path = Bundle.main.path(forResource: code, ofType: "lproj"),
               let bundle = Bundle(path: path) else {
@@ -198,6 +220,7 @@ struct MinisApp: App {
                     appearanceMode == 1 ? .light : appearanceMode == 2 ? .dark : nil
                 )
                 .environment(\.locale, appLanguage.isEmpty ? .current : Locale(identifier: appLanguage))
+                .environment(\.layoutDirection, AppLanguageDirection.layoutDirection(for: appLanguage.isEmpty ? nil : appLanguage))
                 .dynamicTypeSize(fontSettings.appBaseScale.dynamicTypeSize)
                 .onOpenURL { url in
                     shareLog.info("[Share] onOpenURL: \(url.absoluteString)")
@@ -540,6 +563,13 @@ struct MinisApp: App {
     private static let fileProviderResetKey = "fileProviderResetGeneration"
 
     private static func registerFileProviderDomain() {
+        guard SharedContainerStore.hasAppGroupAccess else {
+            lifecycleLog.warning("[FileProvider] App Group unavailable; skipping FileProvider registration (likely sideload signature without application-groups entitlement)")
+            SoulStore.ensureExists()
+            SoulStore.refreshCache()
+            return
+        }
+
         let root = AIChatViewModel.minisAppGroupRoot
         let fm = FileManager.default
         // Ensure all three subdirectories exist.
@@ -865,9 +895,9 @@ struct MinisApp: App {
     private static func migrateSharedDirToAppGroup() {
         let fm = FileManager.default
         let library = fm.urls(for: .libraryDirectory, in: .userDomainMask).first!
-        let container = fm.containerURL(forSecurityApplicationGroupIdentifier: "group.com.openminis.app")!
+        let appGroupContainer = SharedContainerStore.appGroupContainerURL
 
-        let migrations: [(source: URL, dest: URL, label: String)] = [
+        var migrations: [(source: URL, dest: URL, label: String)] = [
             // Legacy Library/MinisChat/shared → new shared
             (library.appendingPathComponent("MinisChat/shared", isDirectory: true),
              AIChatViewModel.minisSharedPersistentDir, "shared"),
@@ -877,10 +907,17 @@ struct MinisApp: App {
             // Legacy Library/MinisChat/skills → new skills
             (library.appendingPathComponent("MinisChat/skills", isDirectory: true),
              AIChatViewModel.minisSkillsPersistentDir, "skills"),
-            // Old App Group MinisShared → new shared
-            (container.appendingPathComponent("MinisShared", isDirectory: true),
-             AIChatViewModel.minisSharedPersistentDir, "MinisShared→shared"),
         ]
+
+        // Old App Group MinisShared → new shared. Only available when the
+        // installed signature carries the application-groups entitlement.
+        if let appGroupContainer {
+            migrations.append((
+                appGroupContainer.appendingPathComponent("MinisShared", isDirectory: true),
+                AIChatViewModel.minisSharedPersistentDir,
+                "MinisShared→shared"
+            ))
+        }
 
         for migration in migrations {
             guard fm.fileExists(atPath: migration.source.path) else { continue }

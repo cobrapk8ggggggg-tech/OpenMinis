@@ -241,23 +241,24 @@ extension AIChatViewModel {
             .appendingPathComponent("browser", isDirectory: true)
     }
 
-    /// App Group container root for FileProvider-visible directories.
-    /// Everything under this path is exposed to iOS Files via the replicated
-    /// FileProvider extension. Keep ONLY user-facing subdirs (shared, skills,
-    /// memory) here — anything else leaks into "On My iPhone → Minis".
+    /// Shared storage root for FileProvider-visible directories.
+    ///
+    /// Official/App-Store-style signatures resolve this inside the App Group so
+    /// extensions can see it. Sideloaded signatures may lack the App Group
+    /// entitlement; iOS then returns nil for the group container. Use the
+    /// main-app fallback from `SharedContainerStore` instead of force-unwrapping,
+    /// otherwise the app crashes immediately after the launch screen.
     nonisolated static var minisAppGroupRoot: URL {
-        FileManager.default.containerURL(
-            forSecurityApplicationGroupIdentifier: SharedContainerStore.appGroupID
-        )!.appendingPathComponent("MinisFileProvider", isDirectory: true)
+        SharedContainerStore.containerURLForMainAppStorage
+            .appendingPathComponent("MinisFileProvider", isDirectory: true)
     }
 
-    /// App Group subdirectory for private metadata that must NOT be exposed
-    /// to iOS Files (mounted-folders.json, FileProvider extension logs, etc).
-    /// Sibling of `minisAppGroupRoot` inside the same App Group container.
+    /// Shared metadata root. Sibling of `minisAppGroupRoot` when App Groups are
+    /// available, or under the same private fallback container for sideloaded
+    /// builds that do not have the App Group entitlement.
     nonisolated static var minisConfigRoot: URL {
-        let url = FileManager.default.containerURL(
-            forSecurityApplicationGroupIdentifier: SharedContainerStore.appGroupID
-        )!.appendingPathComponent("MinisConfig", isDirectory: true)
+        let url = SharedContainerStore.containerURLForMainAppStorage
+            .appendingPathComponent("MinisConfig", isDirectory: true)
         try? FileManager.default.createDirectory(at: url, withIntermediateDirectories: true)
         return url
     }

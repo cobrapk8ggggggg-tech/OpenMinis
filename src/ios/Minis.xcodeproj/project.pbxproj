@@ -2307,6 +2307,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				ar,
 				Base,
 				"zh-Hans",
 				"zh-Hant",

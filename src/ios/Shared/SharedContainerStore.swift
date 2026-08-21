@@ -5,6 +5,32 @@ import Foundation
 enum SharedContainerStore {
     static let appGroupID = "group.com.openminis.app"
 
+    /// App Group container when the installed signature includes the App Group
+    /// entitlement. Sideloaded builds signed with a generic certificate often do
+    /// not have that entitlement; in that case iOS returns nil and callers must
+    /// not force-unwrap it during launch.
+    static var appGroupContainerURL: URL? {
+        FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: appGroupID)
+    }
+
+    /// Private in-app fallback used when App Groups are unavailable. This keeps
+    /// the main app launchable after sideload signing, while features that truly
+    /// require app/extension sharing simply degrade instead of crashing.
+    static var fallbackContainerURL: URL {
+        let support = FileManager.default.urls(for: .applicationSupportDirectory, in: .userDomainMask)[0]
+        let url = support.appendingPathComponent("MinisSharedContainer", isDirectory: true)
+        try? FileManager.default.createDirectory(at: url, withIntermediateDirectories: true)
+        return url
+    }
+
+    static var containerURLForMainAppStorage: URL {
+        appGroupContainerURL ?? fallbackContainerURL
+    }
+
+    static var hasAppGroupAccess: Bool {
+        appGroupContainerURL != nil
+    }
+
     private static let pendingShareKey = "pendingShare"
 
     static var sharedDefaults: UserDefaults? {
@@ -13,8 +39,7 @@ enum SharedContainerStore {
 
     /// Directory in the shared container for transferring attachment files.
     static var sharedFileDirectory: URL? {
-        FileManager.default
-            .containerURL(forSecurityApplicationGroupIdentifier: appGroupID)?
+        appGroupContainerURL?
             .appendingPathComponent("ShareExtension", isDirectory: true)
     }
 

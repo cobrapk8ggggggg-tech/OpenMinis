@@ -276,6 +276,12 @@
     },
     "\"Automatic\" uses the system icon which adapts to Dark Mode on iOS 18+." : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "يستخدم \"تلقائي\" أيقونة النظام التي تتكيف مع النمط الداكن على iOS 18 أو أحدث."
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3997,6 +4003,12 @@
     },
     "About" : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "حول"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5488,6 +5500,12 @@
     },
     "Advanced" : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "متقدم"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -6835,6 +6853,12 @@
     "Always dark" : {
       "extractionState" : "stale",
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "داكن دائمًا"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -6888,6 +6912,12 @@
     "Always light" : {
       "extractionState" : "stale",
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "فاتح دائمًا"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -7572,6 +7602,12 @@
     "App Base" : {
       "extractionState" : "stale",
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "أساس التطبيق"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -7624,6 +7660,12 @@
     },
     "App Icon" : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "أيقونة التطبيق"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -7728,6 +7770,12 @@
     },
     "Appearance" : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "المظهر"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -8949,6 +8997,12 @@
     },
     "Auto" : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "تلقائي"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -9070,6 +9124,12 @@
     },
     "Auto-Focus Input After Reply" : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "التركيز تلقائيًا على الإدخال بعد الرد"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -9122,6 +9182,12 @@
     },
     "Auto-Grouping" : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "التجميع التلقائي"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -9384,6 +9450,12 @@
     "Automatic" : {
       "extractionState" : "stale",
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "تلقائي"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -11415,6 +11487,12 @@
     "Cancel" : {
       "comment" : "Cancel",
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "إلغاء"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -12012,6 +12090,12 @@
     "Chat" : {
       "extractionState" : "stale",
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "المحادثة"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -12170,6 +12254,12 @@
     "Chat Input" : {
       "extractionState" : "stale",
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "إدخال المحادثة"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -12894,6 +12984,12 @@
     },
     "Choose what to show when the app starts. \"Auto\" opens a new chat if the last session is older than 15 minutes." : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "اختر ما يظهر عند بدء التطبيق. يفتح \"تلقائي\" محادثة جديدة إذا كانت آخر جلسة أقدم من 15 دقيقة."
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -12946,6 +13042,12 @@
     },
     "Choose whether the Return key in the chat input inserts a newline or sends the message. Hardware Shift+Return always inserts a newline." : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "اختر ما إذا كان مفتاح الرجوع في إدخال المحادثة يضيف سطرًا جديدًا أو يرسل الرسالة. يضيف Shift+Return في لوحة المفاتيح دائمًا سطرًا جديدًا."
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -13051,6 +13153,12 @@
     "Classic dark icon" : {
       "extractionState" : "stale",
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "الأيقونة الداكنة الكلاسيكية"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -13104,6 +13212,12 @@
     "Classic light icon" : {
       "extractionState" : "stale",
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "الأيقونة الفاتحة الكلاسيكية"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -14163,6 +14277,12 @@
     },
     "Close" : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "إغلاق"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -14947,6 +15067,12 @@
     },
     "Completed" : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "اكتمل"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -16043,6 +16169,12 @@
     },
     "Continue" : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "متابعة"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -16565,6 +16697,12 @@
     },
     "Copy" : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "نسخ"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -19072,6 +19210,12 @@
     },
     "Dark" : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "داكن"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -19125,6 +19269,12 @@
     "Dark (Legacy)" : {
       "extractionState" : "stale",
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "داكن (قديم)"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -19282,6 +19432,12 @@
     },
     "Deep Thinking" : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "التفكير العميق"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -19749,6 +19905,12 @@
     },
     "Delete" : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "حذف"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -21294,6 +21456,12 @@
     },
     "Description" : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "الوصف"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -21763,6 +21931,12 @@
     },
     "Disabled" : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "معطّل"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -22285,6 +22459,12 @@
     "Done" : {
       "comment" : "Dismiss speech language picker\nFinish transcript editing",
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "تم"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -22841,6 +23021,12 @@
     },
     "Edit" : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "تحرير"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -24160,6 +24346,12 @@
     },
     "Enabled" : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "مفعّل"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -24333,6 +24525,12 @@
     },
     "English" : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "الإنجليزية"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -25172,6 +25370,12 @@
     },
     "Error" : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "خطأ"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -25712,6 +25916,12 @@
     },
     "Expand Thinking While Streaming" : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "توسيع التفكير أثناء البث"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -26394,6 +26604,12 @@
     },
     "Failed" : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "فشل"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -27212,6 +27428,12 @@
     },
     "Files" : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "الملفات"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -27891,6 +28113,12 @@
     "Follows system" : {
       "extractionState" : "stale",
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "يتبع النظام"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -27943,6 +28171,12 @@
     },
     "Font Size" : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "حجم الخط"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -29784,6 +30018,12 @@
     },
     "Grouping" : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "التجميع"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -30637,6 +30877,12 @@
     },
     "History" : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "السجل"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -30700,6 +30946,12 @@
     },
     "Home" : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "الرئيسية"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -31334,6 +31586,12 @@
     },
     "iCloud Sync" : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "مزامنة iCloud"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -34403,6 +34661,12 @@
     },
     "Keep Screen Awake" : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "إبقاء الشاشة مستيقظة"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -34720,6 +34984,12 @@
     },
     "Language" : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "اللغة"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -35080,6 +35350,12 @@
     },
     "Last Session" : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "آخر جلسة"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -35236,6 +35512,12 @@
     },
     "Launch Session" : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "جلسة البدء"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -35761,6 +36043,12 @@
     },
     "Light" : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "فاتح"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -35814,6 +36102,12 @@
     "Light (Legacy)" : {
       "extractionState" : "stale",
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "فاتح (قديم)"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -36816,6 +37110,12 @@
     },
     "Loading…" : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "جارٍ التحميل…"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -38859,6 +39159,12 @@
     },
     "Memory" : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "الذاكرة"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -39175,6 +39481,12 @@
     "Message Text" : {
       "extractionState" : "stale",
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "نص الرسالة"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -40946,6 +41258,12 @@
     },
     "Model" : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "النموذج"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -41447,6 +41765,12 @@
     },
     "Models" : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "النماذج"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -42772,6 +43096,12 @@
     },
     "Name" : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "الاسم"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -43206,6 +43536,12 @@
     },
     "New Chat" : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "محادثة جديدة"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -43588,6 +43924,12 @@
     },
     "Newline" : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "سطر جديد"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -48858,6 +49200,12 @@
     },
     "Override the display language for this app. \"System\" follows your device language." : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "تجاوز لغة العرض لهذا التطبيق. خيار \"النظام\" يتبع لغة جهازك."
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -48910,6 +49258,12 @@
     },
     "Override the system appearance for this app." : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "تجاوز مظهر النظام لهذا التطبيق."
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -51307,6 +51661,12 @@
     },
     "Prevent the screen from sleeping while any session is running a task. May increase battery drain." : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "امنع الشاشة من السكون أثناء تشغيل أي جلسة لمهمة. قد يزيد ذلك من استهلاك البطارية."
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -51690,6 +52050,12 @@
     },
     "Privacy" : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "الخصوصية"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -52003,6 +52369,12 @@
     },
     "Provider" : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "المزوّد"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -52315,6 +52687,12 @@
     },
     "Providers" : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "المزوّدون"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -56697,6 +57075,12 @@
     },
     "Reset to Defaults" : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "إعادة التعيين للافتراضي"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -57914,6 +58298,12 @@
     "Retry" : {
       "comment" : "Manual retry transcription",
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "إعادة المحاولة"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -58243,6 +58633,12 @@
     },
     "Return Key" : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "مفتاح الرجوع"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -59221,6 +59617,12 @@
     },
     "Running" : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "قيد التشغيل"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -59377,6 +59779,12 @@
     },
     "Save" : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "حفظ"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -59793,6 +60201,12 @@
     },
     "Scale fonts for chat input, message content, and general app text. Changes apply immediately." : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "اضبط حجم الخط لإدخال المحادثة ومحتوى الرسائل ونص التطبيق العام. تُطبّق التغييرات فورًا."
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -60788,6 +61202,12 @@
     },
     "Send" : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "إرسال"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -61225,6 +61645,12 @@
     },
     "Session" : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "الجلسة"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -61746,6 +62172,12 @@
     },
     "Sessions" : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "الجلسات"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -62165,6 +62597,12 @@
     },
     "Settings" : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "الإعدادات"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -62321,6 +62759,12 @@
     },
     "Share" : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "مشاركة"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -62425,6 +62869,12 @@
     },
     "Shared" : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "مشترك"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -63053,6 +63503,12 @@
     },
     "Show a live preview thumbnail alongside the tool status bar during agent execution." : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "اعرض معاينة مصغّرة مباشرة بجانب شريط حالة الأداة أثناء تنفيذ الوكيل."
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -64491,6 +64947,12 @@
     },
     "Skills" : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "المهارات"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -66219,6 +66681,12 @@
     },
     "Stop" : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "إيقاف"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -67416,6 +67884,12 @@
     "System" : {
       "comment" : "Built-in Apple speech engine\nBuilt-in Apple speech engine provider name",
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "النظام"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -70393,6 +70867,12 @@
     },
     "Theme" : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "المظهر"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -70497,6 +70977,12 @@
     },
     "Thinking" : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "يفكّر"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -73745,6 +74231,12 @@
     },
     "Tool Preview Window" : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "نافذة معاينة الأداة"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -73797,6 +74289,12 @@
     },
     "Tool Status Bar" : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "شريط حالة الأداة"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -77724,6 +78222,12 @@
     },
     "Voice" : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "الصوت"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -78753,6 +79257,12 @@
     },
     "When a chat's title is first generated, also file it into a matching existing group. Runs once per chat, only uses groups you already created, and leaves the chat ungrouped when nothing matches." : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "عند إنشاء عنوان المحادثة لأول مرة، يتم أيضًا وضعها في مجموعة موجودة مطابقة. يعمل مرة واحدة لكل محادثة ولا يستخدم إلا المجموعات التي أنشأتها مسبقًا، ويترك المحادثة بلا مجموعة إذا لم توجد مطابقة."
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
