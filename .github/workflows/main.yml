@@ -104,7 +104,6 @@ jobs:
           test -f "$APP_PATH/alpine-rootfs.zip" || { echo "❌ alpine-rootfs.zip missing from app resources"; exit 1; }
           test -d "$APP_PATH/default_mount" || { echo "❌ default_mount missing from app resources"; exit 1; }
           test -d "$APP_PATH/Frameworks" || { echo "❌ Frameworks directory missing"; exit 1; }
-          test -d "$APP_PATH/PlugIns" || { echo "❌ PlugIns directory with app extensions missing"; exit 1; }
 
           echo "✅ Unsigned app bundle looks complete: $APP_PATH"
           find "$APP_PATH" -maxdepth 2 \( -name "*.framework" -o -name "*.appex" -o -name "alpine-rootfs.zip" -o -name "default_mount" \) -print | sort
@@ -118,6 +117,14 @@ jobs:
           # Ensure no stale signatures/profiles from local project settings survive.
           find "$APP_PATH" -name "_CodeSignature" -type d -prune -exec rm -rf {} +
           find "$APP_PATH" -name "embedded.mobileprovision" -type f -delete
+
+          # Sideload signers commonly use personal/developer certificates that
+          # cannot grant the App Group entitlement required by the embedded
+          # Share/FileProvider/Widget extensions. A nested extension signed without
+          # its matching entitlement can make iOS kill the container app at launch,
+          # so the public unsigned IPA keeps the main app only. The app code now
+          # falls back to private in-app storage when App Groups are unavailable.
+          rm -rf "$APP_PATH/PlugIns"
 
           mkdir -p Payload
           /usr/bin/ditto "$APP_PATH" "Payload/${APP_NAME}.app"
