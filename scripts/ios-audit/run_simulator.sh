@@ -17,13 +17,20 @@ PY
 )
 xcrun simctl boot "$SIMULATOR_ID" || true
 xcrun simctl bootstatus "$SIMULATOR_ID" -b
+trap 'xcrun simctl io "$SIMULATOR_ID" screenshot audit/simulator-last-state.png || true' EXIT
 APP_PATH="$PWD/audit/DerivedData/Build/Products/Release-iphonesimulator/Minis.app"
 codesign --force --deep --sign - "$APP_PATH"
 xcrun simctl install "$SIMULATOR_ID" "$APP_PATH"
 xcrun simctl launch "$SIMULATOR_ID" com.openminis.app | tee audit/simulator-launch.txt
 sleep 20
 xcrun simctl spawn "$SIMULATOR_ID" launchctl list > audit/simulator-processes.txt
-grep 'com.openminis.app' audit/simulator-processes.txt
+python3 - <<'PY'
+from pathlib import Path
+rows = [line.split() for line in Path('audit/simulator-processes.txt').read_text().splitlines()
+        if 'com.openminis.app' in line]
+assert any(row[0].isdigit() and int(row[0]) > 0 for row in rows), rows
+print('App has a live process after 20 seconds:', rows)
+PY
 xcrun simctl io "$SIMULATOR_ID" screenshot audit/simulator-launch.png
 xcrun simctl spawn "$SIMULATOR_ID" log show --last 2m --style compact \
     --predicate 'process == "Minis"' > audit/simulator-app.log

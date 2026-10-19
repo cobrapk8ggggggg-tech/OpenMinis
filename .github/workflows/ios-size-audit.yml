@@ -7,6 +7,12 @@ on:
       - '.github/workflows/ios-size-audit.yml'
       - 'scripts/ios-audit/**'
   workflow_dispatch:
+    inputs:
+      sdk:
+        description: Which build to run
+        type: choice
+        options: [both, iphoneos, iphonesimulator]
+        default: both
 
 permissions:
   contents: read
@@ -19,7 +25,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        sdk: [iphoneos, iphonesimulator]
+        sdk: ${{ fromJSON((inputs.sdk == 'iphonesimulator' || contains(github.event.head_commit.message, '[simulator-only]')) && '["iphonesimulator"]' || (inputs.sdk == 'iphoneos' || contains(github.event.head_commit.message, '[device-only]')) && '["iphoneos"]' || '["iphoneos","iphonesimulator"]') }}
     env:
       AUDIT_SDK: ${{ matrix.sdk }}
     steps:
@@ -122,5 +128,6 @@ jobs:
             audit/*.png
             audit/*.crash
             audit/*.ips
+            deps/ffmpeg-6.1.2/ffbuild/config.log
           if-no-files-found: warn
           retention-days: 14
