@@ -1,0 +1,45 @@
+name: Launch existing iOS simulator build
+
+on:
+  push:
+    branches: [build/ios-size-audit-20261019]
+    paths:
+      - '.github/workflows/ios-simulator-smoke.yml'
+      - 'scripts/ios-smoke/**'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  actions: read
+
+jobs:
+  launch:
+    runs-on: macos-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Download already compiled simulator application
+        uses: actions/download-artifact@v4
+        with:
+          name: OpenMinis-iphonesimulator-release
+          run-id: 39188066958
+          github-token: ${{ github.token }}
+          path: audit/artifact
+      - name: Launch with minimal simulator entitlements
+        run: bash scripts/ios-smoke/launch.sh
+      - name: Upload runtime evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: simulator-runtime-evidence
+          path: |
+            audit/*.log
+            audit/*.txt
+            audit/*.json
+            audit/*.plist
+            audit/*.png
+            audit/*.ips
+          if-no-files-found: error
+          retention-days: 14
