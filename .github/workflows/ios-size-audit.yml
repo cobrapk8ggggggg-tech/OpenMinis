@@ -1,0 +1,126 @@
+name: iOS source build and size audit
+
+on:
+  push:
+    branches: [build/ios-size-audit-20261019]
+    paths:
+      - '.github/workflows/ios-size-audit.yml'
+      - 'scripts/ios-audit/**'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    name: ${{ matrix.sdk }} release
+    runs-on: macos-latest
+    timeout-minutes: 100
+    strategy:
+      fail-fast: false
+      matrix:
+        sdk: [iphoneos, iphonesimulator]
+    env:
+      AUDIT_SDK: ${{ matrix.sdk }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: recursive
+          persist-credentials: false
+      - uses: actions/setup-go@v5
+        with:
+          go-version: '1.25.x'
+          cache-dependency-path: deps/rclone-mobile/go.sum
+      - name: Record environment and install prerequisites
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p audit
+          uname -a | tee audit/environment.txt
+          xcodebuild -version | tee -a audit/environment.txt
+          xcrun --sdk "$AUDIT_SDK" --show-sdk-version | tee -a audit/environment.txt
+          test "$(uname -m)" = arm64
+          brew install ninja llvm lld libarchive pkg-config meson
+          for formula in llvm lld libarchive; do
+            echo "$(brew --prefix "$formula")/bin" >> "$GITHUB_PATH"
+          done
+          cp src/ios/Configs/ProviderCustomization.xcconfig.example src/ios/Configs/ProviderCustomization.xcconfig
+          if ! xcrun --sdk iphoneos metal --version; then
+            xcodebuild -downloadComponent MetalToolchain
+          fi
+          xcrun --sdk iphoneos metal --version
+      - name: Select simulator SDK in native build scripts
+        if: matrix.sdk == 'iphonesimulator'
+        run: python3 scripts/ios-audit/prepare_simulator.py
+      - name: Build native dependencies from source
+        shell: bash
+        run: |
+          set -euo pipefail
+          ./deps/build_lame.sh 2>&1 | tee audit/lame.log
+          ./deps/build_ffmpeg.sh 2>&1 | tee audit/ffmpeg.log
+          ./deps/build_ish.sh 2>&1 | tee audit/ish.log
+          ./deps/prepare_alpine_rootfs.sh 2>&1 | tee audit/rootfs.log
+          ./deps/build_rclone_ios.sh 2>&1 | tee audit/rclone.log
+      - name: Build Release application with every extension
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [ "$AUDIT_SDK" = iphoneos ]; then
+            xcodebuild archive -project src/ios/Minis.xcodeproj -scheme Minis \
+              -configuration Release -sdk iphoneos -destination 'generic/platform=iOS' \
+              -archivePath "$PWD/audit/Minis.xcarchive" -derivedDataPath "$PWD/audit/DerivedData" \
+              CODE_SIGNING_ALLOWED=NO CODE_SIGNING_REQUIRED=NO DEVELOPMENT_TEAM= \
+              COMPILER_INDEX_STORE_ENABLE=NO 2>&1 | tee audit/xcodebuild.log
+          else
+            xcodebuild build -project src/ios/Minis.xcodeproj -scheme Minis \
+              -configuration Release -sdk iphonesimulator -destination 'generic/platform=iOS Simulator' \
+              -derivedDataPath "$PWD/audit/DerivedData" ARCHS=arm64 ONLY_ACTIVE_ARCH=YES \
+              CODE_SIGNING_ALLOWED=NO CODE_SIGNING_REQUIRED=NO DEVELOPMENT_TEAM= \
+              COMPILER_INDEX_STORE_ENABLE=NO 2>&1 | tee audit/xcodebuild.log
+          fi
+      - name: Package and measure
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [ "$AUDIT_SDK" = iphoneos ]; then
+            APP_PATH="$PWD/audit/Minis.xcarchive/Products/Applications/Minis.app"
+            mkdir -p audit/package/Payload
+            ditto "$APP_PATH" audit/package/Payload/Minis.app
+            (cd audit/package && zip -qry ../OpenMinis-1.14-unsigned.ipa Payload)
+            python3 scripts/ios-audit/measure.py "$APP_PATH" audit/OpenMinis-1.14-unsigned.ipa
+          else
+            APP_PATH="$PWD/audit/DerivedData/Build/Products/Release-iphonesimulator/Minis.app"
+            ditto -c -k --keepParent "$APP_PATH" audit/OpenMinis-simulator.zip
+            python3 scripts/ios-audit/measure.py "$APP_PATH" audit/OpenMinis-simulator.zip
+          fi
+          cat audit/size-report.md >> "$GITHUB_STEP_SUMMARY"
+      - name: Boot simulator, install, launch and check process
+        if: matrix.sdk == 'iphonesimulator'
+        shell: bash
+        run: bash scripts/ios-audit/run_simulator.sh
+      - name: Upload application
+        uses: actions/upload-artifact@v4
+        if: success()
+        with:
+          name: OpenMinis-${{ matrix.sdk }}-release
+          path: |
+            audit/*.ipa
+            audit/OpenMinis-simulator.zip
+          if-no-files-found: error
+          compression-level: 0
+          retention-days: 14
+      - name: Upload reports, logs and simulator screenshot
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: audit-${{ matrix.sdk }}
+          path: |
+            audit/*.log
+            audit/*.txt
+            audit/*.json
+            audit/*.md
+            audit/*.png
+            audit/*.crash
+            audit/*.ips
+          if-no-files-found: warn
+          retention-days: 14
