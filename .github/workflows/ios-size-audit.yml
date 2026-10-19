@@ -44,6 +44,7 @@ jobs:
           mkdir -p audit
           uname -a | tee audit/environment.txt
           xcodebuild -version | tee -a audit/environment.txt
+          echo "AUDIT_XCODE_VERSION=$(xcodebuild -version | tr '\n ' '--')" >> "$GITHUB_ENV"
           xcrun --sdk "$AUDIT_SDK" --show-sdk-version | tee -a audit/environment.txt
           test "$(uname -m)" = arm64
           brew install ninja llvm lld libarchive pkg-config meson
@@ -55,10 +56,21 @@ jobs:
             xcodebuild -downloadComponent MetalToolchain
           fi
           xcrun --sdk iphoneos metal --version
+      - name: Restore compiled native dependencies
+        id: native-cache
+        uses: actions/cache/restore@v4
+        with:
+          key: native-b4c0661-${{ matrix.sdk }}-${{ env.AUDIT_XCODE_VERSION }}-${{ hashFiles('deps/build_*.sh', 'scripts/ios-audit/prepare_simulator.py') }}
+          path: |
+            deps/libs
+            deps/include
+            deps/frameworks
+            deps/resources
       - name: Select simulator SDK in native build scripts
         if: matrix.sdk == 'iphonesimulator'
         run: python3 scripts/ios-audit/prepare_simulator.py
       - name: Build native dependencies from source
+        if: steps.native-cache.outputs.cache-hit != 'true'
         shell: bash
         run: |
           set -euo pipefail
@@ -67,6 +79,16 @@ jobs:
           ./deps/build_ish.sh 2>&1 | tee audit/ish.log
           ./deps/prepare_alpine_rootfs.sh 2>&1 | tee audit/rootfs.log
           ./deps/build_rclone_ios.sh 2>&1 | tee audit/rclone.log
+      - name: Save compiled native dependencies
+        if: steps.native-cache.outputs.cache-hit != 'true'
+        uses: actions/cache/save@v4
+        with:
+          key: ${{ steps.native-cache.outputs.cache-primary-key }}
+          path: |
+            deps/libs
+            deps/include
+            deps/frameworks
+            deps/resources
       - name: Build Release application with every extension
         shell: bash
         run: |
@@ -85,6 +107,7 @@ jobs:
               COMPILER_INDEX_STORE_ENABLE=NO 2>&1 | tee audit/xcodebuild.log
           fi
       - name: Package and measure
+        id: measure
         shell: bash
         run: |
           set -euo pipefail
@@ -100,13 +123,9 @@ jobs:
             python3 scripts/ios-audit/measure.py "$APP_PATH" audit/OpenMinis-simulator.zip
           fi
           cat audit/size-report.md >> "$GITHUB_STEP_SUMMARY"
-      - name: Boot simulator, install, launch and check process
-        if: matrix.sdk == 'iphonesimulator'
-        shell: bash
-        run: bash scripts/ios-audit/run_simulator.sh
       - name: Upload application
         uses: actions/upload-artifact@v4
-        if: success()
+        if: always() && steps.measure.outcome == 'success'
         with:
           name: OpenMinis-${{ matrix.sdk }}-release
           path: |
@@ -115,6 +134,10 @@ jobs:
           if-no-files-found: error
           compression-level: 0
           retention-days: 14
+      - name: Boot simulator, install, launch and check process
+        if: matrix.sdk == 'iphonesimulator' && steps.measure.outcome == 'success'
+        shell: bash
+        run: bash scripts/ios-audit/run_simulator.sh
       - name: Upload reports, logs and simulator screenshot
         uses: actions/upload-artifact@v4
         if: always()

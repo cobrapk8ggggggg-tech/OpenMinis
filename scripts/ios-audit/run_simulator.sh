@@ -17,9 +17,16 @@ PY
 )
 xcrun simctl boot "$SIMULATOR_ID" || true
 xcrun simctl bootstatus "$SIMULATOR_ID" -b
-trap 'xcrun simctl io "$SIMULATOR_ID" screenshot audit/simulator-last-state.png || true' EXIT
+collect_diagnostics() {
+    xcrun simctl io "$SIMULATOR_ID" screenshot audit/simulator-last-state.png || true
+    xcrun simctl spawn "$SIMULATOR_ID" log show --last 4m --style compact \
+        --predicate 'process == "Minis"' > audit/simulator-app.log || true
+    find "$HOME/Library/Logs/DiagnosticReports" -maxdepth 1 -iname '*Minis*' \
+        -type f -exec cp {} audit/ \; 2>/dev/null || true
+}
+trap collect_diagnostics EXIT
 APP_PATH="$PWD/audit/DerivedData/Build/Products/Release-iphonesimulator/Minis.app"
-codesign --force --deep --sign - "$APP_PATH"
+codesign --force --deep --sign - --entitlements src/ios/Minis.entitlements "$APP_PATH"
 xcrun simctl install "$SIMULATOR_ID" "$APP_PATH"
 xcrun simctl launch "$SIMULATOR_ID" com.openminis.app | tee audit/simulator-launch.txt
 sleep 20
