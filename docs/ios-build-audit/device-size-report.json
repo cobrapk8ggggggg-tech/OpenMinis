@@ -1,0 +1,233 @@
+{
+  "git_commit": "c85edf45c11549e81012879fad57d75f62343abf",
+  "upstream_commit": "b4c0661d5631ebab4d1a2e6f3fd4c805d4030a6c",
+  "version": "1.14",
+  "bundle_id": "com.openminis.app",
+  "platform": [
+    "iPhoneOS"
+  ],
+  "unpacked_app_bytes": 133496473,
+  "package_bytes": 64160117,
+  "package_sha256": "c75806ed31e11752e94632ac3ccb029847b66ff27b76dbb1f0a7b63b02fc099a",
+  "extensions": [
+    "AgentWidgetExtension.appex",
+    "MinisFileProvider.appex",
+    "MinisShare.appex"
+  ],
+  "components": {
+    "Minis": 52033768,
+    "Frameworks": 31654570,
+    "SwiftMath_SwiftMath.bundle": 7363952,
+    "Assets.car": 6136472,
+    "AlternateIcons": 5546939,
+    "jieba.dict.utf8": 5071207,
+    "PlugIns": 4876700,
+    "models-dev-api.json": 4860546,
+    "RealTimeCutVADLibrary_RealTimeCutVADLibrary.bundle": 4135777,
+    "alpine-rootfs.zip": 3984116,
+    "cl100k_base.tiktoken": 1681126,
+    "KaTeX": 849339,
+    "hmm_model.utf8": 519739,
+    "fr.lproj": 302078,
+    "ru.lproj": 295849,
+    "hr.lproj": 293982,
+    "es.lproj": 288427,
+    "ro.lproj": 286712,
+    "de.lproj": 285346,
+    "tr.lproj": 280890,
+    "pl.lproj": 277676,
+    "pt-BR.lproj": 276467,
+    "th.lproj": 264186,
+    "fil.lproj": 229020,
+    "ms.lproj": 226039,
+    "id.lproj": 222815,
+    "ja.lproj": 221823,
+    "ko.lproj": 214665,
+    "zh-Hans.lproj": 205428,
+    "zh-Hant.lproj": 199971,
+    "en.lproj": 127468,
+    "default_mount": 86225,
+    "travel-planning-session.json": 40477,
+    "Metadata.appintents": 37935,
+    "AppIcon76x76@2x~ipad.png": 33653,
+    "AppIcon60x60@2x.png": 22176,
+    "RootfsPatch.bundle": 16286,
+    "test-data-health.json": 15719,
+    "Info.plist": 8280,
+    "bashism_rules.json": 7167,
+    "bashism_test_vectors.json": 6098,
+    "Launch Screen.storyboardc": 5930,
+    "zh_background_wordfreq.txt": 2180,
+    "PrivacyInfo.xcprivacy": 1246,
+    "PkgInfo": 8
+  },
+  "largest_files": [
+    {
+      "path": "Minis",
+      "bytes": 52033768
+    },
+    {
+      "path": "Frameworks/RealTimeCutVADCXXLibrary.framework/RealTimeCutVADCXXLibrary",
+      "bytes": 17946352
+    },
+    {
+      "path": "Frameworks/libavcodec.framework/libavcodec",
+      "bytes": 7946928
+    },
+    {
+      "path": "Assets.car",
+      "bytes": 6136472
+    },
+    {
+      "path": "jieba.dict.utf8",
+      "bytes": 5071207
+    },
+    {
+      "path": "models-dev-api.json",
+      "bytes": 4860546
+    },
+    {
+      "path": "alpine-rootfs.zip",
+      "bytes": 3984116
+    },
+    {
+      "path": "Frameworks/libavfilter.framework/libavfilter",
+      "bytes": 2463008
+    },
+    {
+      "path": "RealTimeCutVADLibrary_RealTimeCutVADLibrary.bundle/silero_vad_v5.onnx",
+      "bytes": 2327524
+    },
+    {
+      "path": "Frameworks/libavformat.framework/libavformat",
+      "bytes": 1883920
+    },
+    {
+      "path": "RealTimeCutVADLibrary_RealTimeCutVADLibrary.bundle/silero_vad.onnx",
+      "bytes": 1807522
+    },
+    {
+      "path": "cl100k_base.tiktoken",
+      "bytes": 1681126
+    },
+    {
+      "path": "AlternateIcons/AppIcon-LegacyDark.png",
+      "bytes": 1587636
+    },
+    {
+      "path": "AlternateIcons/AppIcon-Light.png",
+      "bytes": 1395293
+    },
+    {
+      "path": "AlternateIcons/AppIcon-LegacyLight.png",
+      "bytes": 1347555
+    },
+    {
+      "path": "AlternateIcons/AppIcon-Dark.png",
+      "bytes": 1216455
+    },
+    {
+      "path": "SwiftMath_SwiftMath.bundle/mathFonts.bundle/Garamond-Math.otf",
+      "bytes": 823988
+    },
+    {
+      "path": "SwiftMath_SwiftMath.bundle/mathFonts.bundle/latinmodern-math.otf",
+      "bytes": 733736
+    },
+    {
+      "path": "SwiftMath_SwiftMath.bundle/mathFonts.bundle/LibertinusMath-Regular.otf",
+      "bytes": 588848
+    },
+    {
+      "path": "Frameworks/libavutil.framework/libavutil",
+      "bytes": 543488
+    },
+    {
+      "path": "SwiftMath_SwiftMath.bundle/mathFonts.bundle/xits-math.otf",
+      "bytes": 538696
+    },
+    {
+      "path": "SwiftMath_SwiftMath.bundle/mathFonts.bundle/texgyretermes-math.otf",
+      "bytes": 532404
+    },
+    {
+      "path": "hmm_model.utf8",
+      "bytes": 519739
+    },
+    {
+      "path": "SwiftMath_SwiftMath.bundle/mathFonts.bundle/NotoSansMath-Regular.otf",
+      "bytes": 498408
+    },
+    {
+      "path": "SwiftMath_SwiftMath.bundle/mathFonts.bundle/KpMath-Light.otf",
+      "bytes": 451008
+    },
+    {
+      "path": "SwiftMath_SwiftMath.bundle/mathFonts.bundle/LeteSansMath.otf",
+      "bytes": 440268
+    },
+    {
+      "path": "SwiftMath_SwiftMath.bundle/mathFonts.bundle/Asana-Math.otf",
+      "bytes": 433528
+    },
+    {
+      "path": "SwiftMath_SwiftMath.bundle/mathFonts.bundle/Euler-Math.otf",
+      "bytes": 428792
+    },
+    {
+      "path": "Frameworks/libswscale.framework/libswscale",
+      "bytes": 354624
+    },
+    {
+      "path": "Frameworks/FFmpeg.framework/FFmpeg",
+      "bytes": 309520
+    },
+    {
+      "path": "fr.lproj/Localizable.strings",
+      "bytes": 294811
+    },
+    {
+      "path": "PlugIns/AgentWidgetExtension.appex/fr.lproj/Localizable.strings",
+      "bytes": 294811
+    },
+    {
+      "path": "SwiftMath_SwiftMath.bundle/mathFonts.bundle/KpMath-Sans.otf",
+      "bytes": 293084
+    },
+    {
+      "path": "hr.lproj/Localizable.strings",
+      "bytes": 289311
+    },
+    {
+      "path": "PlugIns/AgentWidgetExtension.appex/hr.lproj/Localizable.strings",
+      "bytes": 289311
+    },
+    {
+      "path": "ru.lproj/Localizable.strings",
+      "bytes": 288285
+    },
+    {
+      "path": "PlugIns/AgentWidgetExtension.appex/ru.lproj/Localizable.strings",
+      "bytes": 288285
+    },
+    {
+      "path": "es.lproj/Localizable.strings",
+      "bytes": 281824
+    },
+    {
+      "path": "PlugIns/AgentWidgetExtension.appex/es.lproj/Localizable.strings",
+      "bytes": 281824
+    },
+    {
+      "path": "ro.lproj/Localizable.strings",
+      "bytes": 281719
+    }
+  ],
+  "notes": [
+    "Full upstream app; extensions and bundled native dependencies are retained.",
+    "Device IPA is unsigned, locally ZIP-compressed; not an App Store download-size measurement.",
+    "Bundle bytes exclude runtime data and extracted Linux rootfs after first launch.",
+    "Simulator package sizes must not be used as device distribution sizes."
+  ],
+  "zip_members_uncompressed_bytes": 133496473
+}

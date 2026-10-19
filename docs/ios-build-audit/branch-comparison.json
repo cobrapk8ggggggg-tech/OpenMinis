@@ -1,0 +1,15 @@
+{
+  "older_branch": "codex/read-all-repository-files-thoroughly",
+  "older_commit": "c47dcf33190072ede964a0ac39f7251290f4745b",
+  "older_app_version": "1.12",
+  "newer_upstream_commit": "b4c0661d5631ebab4d1a2e6f3fd4c805d4030a6c",
+  "newer_app_version": "1.14",
+  "older_catalog_keys": 1788,
+  "newer_catalog_keys": 2389,
+  "arabic_translated_keys": 85,
+  "arabic_keys_still_present_in_newer": 85,
+  "new_catalog_keys": 601,
+  "removed_catalog_keys": 0,
+  "arabic_text_utf8_bytes": 2829,
+  "upstream_newer_has_arabic": false
+}

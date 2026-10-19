@@ -1,0 +1,124 @@
+{"app_name":"Minis","timestamp":"2026-10-19 02:28:20.00 +0000","app_version":"1.14","slice_uuid":"eff76328-2be5-3dbf-a5c8-075f6bf4e717","build_version":"1","platform":7,"bundleID":"com.openminis.app","share_with_app_devs":0,"is_first_party":0,"bug_type":"309","os_version":"macOS 26.6.2 (25G83)","roots_installed":0,"name":"Minis","incident_id":"FF85345F-0874-4A3D-B284-ECBD94774CF5"}
+{
+  "uptime" : 650,
+  "procRole" : "Foreground",
+  "version" : 2,
+  "userID" : 501,
+  "deployVersion" : 210,
+  "modelCode" : "VirtualMac2,1",
+  "coalitionID" : 1764,
+  "osVersion" : {
+    "train" : "macOS 26.6.2",
+    "build" : "25G83",
+    "releaseType" : "User"
+  },
+  "captureTime" : "2026-10-19 02:28:13.4517 +0000",
+  "codeSigningMonitor" : 0,
+  "incident" : "FF85345F-0874-4A3D-B284-ECBD94774CF5",
+  "pid" : 10527,
+  "translated" : false,
+  "cpuType" : "ARM-64",
+  "procLaunch" : "2026-10-19 02:28:12.8226 +0000",
+  "procStartAbsTime" : 15679569955,
+  "procExitAbsTime" : 15683899721,
+  "procName" : "Minis",
+  "procPath" : "\/Users\/USER\/Library\/Developer\/CoreSimulator\/Devices\/E839A11B-51B4-4AD3-ACF4-A53B95B7C957\/data\/Containers\/Bundle\/Application\/F28C6EF3-FF56-404F-B5D6-849A697FD59D\/Minis.app\/Minis",
+  "bundleInfo" : {"CFBundleShortVersionString":"1.14","CFBundleVersion":"1","CFBundleIdentifier":"com.openminis.app"},
+  "storeInfo" : {"deviceIdentifierForVendor":"03FB43A4-58B9-5C7A-96D7-7DFE3F8826A5","thirdParty":true},
+  "parentProc" : "launchd_sim",
+  "parentPid" : 8146,
+  "coalitionName" : "com.apple.CoreSimulator.SimDevice.E839A11B-51B4-4AD3-ACF4-A53B95B7C957",
+  "crashReporterKey" : "50B57668-6D20-9E01-B90C-EBD9FCBB8833",
+  "appleIntelligenceStatus" : {"state":"unavailable","reasons":["deviceNotCapable"]},
+  "developerMode" : 1,
+  "responsiblePid" : 7908,
+  "responsibleProc" : "SimulatorTrampoline",
+  "codeSigningID" : "com.openminis.app",
+  "codeSigningTeamID" : "",
+  "codeSigningFlags" : 587203072,
+  "codeSigningValidationCategory" : 0,
+  "codeSigningTrustLevel" : 4294967295,
+  "codeSigningAuxiliaryInfo" : 0,
+  "instructionByteStream" : {"beforePC":"+mcEqfhfBan2Vwap9E8Hqf17CKn9AwKR9QMBqvQDAKrzAwiq\/\/8AOQ==","atPC":"CABAuelZn1Kp3b9yHwEJa+AAAFTJWZ9Sqd2\/ch8BCWsBBQBUiQOAUg=="},
+  "bootSessionUUID" : "BD3E73D6-A697-420A-9FDD-A50539A2C053",
+  "sip" : "disabled",
+  "vmRegionInfo" : "0x10fe94000 is in 0x10ea64000-0x110f98000;  bytes after start: 21168128  bytes before end: 17842175\n      REGION TYPE                    START - END         [ VSIZE] PRT\/MAX SHRMOD  REGION DETAIL\n      mapped file                 10ea4c000-10ea64000    [   96K] r--\/rwx SM=COW  Object_id=cf41e1cd\n--->  mapped file                 10ea64000-110f98000    [ 37.2M] r--\/rwx SM=COW  Object_id=5d81a5c5\n      GAP OF 0x56b8c000 BYTES\n      Stack Guard                 167b24000-16b328000    [ 56.0M] ---\/rwx SM=NUL  ",
+  "exception" : {"codes":"0x0000000000000032, 0x000000010fe94000","rawCodes":[50,4561911808],"type":"EXC_BAD_ACCESS","signal":"SIGKILL (Code Signature Invalid)","subtype":"UNKNOWN_0x32 at 0x000000010fe94000"},
+  "termination" : {"flags":0,"code":2,"namespace":"CODESIGNING","indicator":"Invalid Page"},
+  "vmregioninfo" : "0x10fe94000 is in 0x10ea64000-0x110f98000;  bytes after start: 21168128  bytes before end: 17842175\n      REGION TYPE                    START - END         [ VSIZE] PRT\/MAX SHRMOD  REGION DETAIL\n      mapped file                 10ea4c000-10ea64000    [   96K] r--\/rwx SM=COW  Object_id=cf41e1cd\n--->  mapped file                 10ea64000-110f98000    [ 37.2M] r--\/rwx SM=COW  Object_id=5d81a5c5\n      GAP OF 0x56b8c000 BYTES\n      Stack Guard                 167b24000-16b328000    [ 56.0M] ---\/rwx SM=NUL  ",
+  "extMods" : {"caller":{"thread_create":0,"thread_set_state":0,"task_for_pid":0},"system":{"thread_create":0,"thread_set_state":0,"task_for_pid":0},"targeted":{"thread_create":0,"thread_set_state":0,"task_for_pid":0},"warnings":0},
+  "faultingThread" : 0,
+  "threads" : [{"triggered":true,"id":35593,"threadState":{"x":[{"value":4561911808},{"value":6101790280},{"value":1},{"value":262146},{"value":3},{"value":0},{"value":4498379120,"symbolLocation":0,"symbol":"mmap"},{"value":0},{"value":6101790360},{"value":4497315300,"symbolLocation":0,"symbol":"invocation function for block in mach_o::UnsafeHeader::forEachSegment(void (mach_o::UnsafeHeader::SegmentInfo const&, bool&) block_pointer) const"},{"value":4497394312,"symbolLocation":8,"symbol":"__block_descriptor_tmp.292"},{"value":60},{"value":58},{"value":60},{"value":4497392880,"symbolLocation":8,"symbol":"__block_descriptor_tmp"},{"value":1},{"value":197},{"value":4498374496,"symbolLocation":56,"symbol":"fcntl"},{"value":0},{"value":6101790360},{"value":4561911808},{"value":6101790280},{"value":6101797152},{"value":0},{"value":0},{"value":4540743680},{"value":6101793904},{"value":4561911808},{"value":1}],"flavor":"ARM_THREAD_STATE64","lr":{"value":4497314912},"cpsr":{"value":4096},"fp":{"value":6101790256},"sp":{"value":6101790128},"esr":{"value":2449473543,"description":"(Data Abort) byte read Translation fault"},"pc":{"value":4497303936,"matchesCrashFrame":1},"far":{"value":4561911808}},"frames":[{"imageOffset":256384,"symbol":"mach_o::UnsafeHeader::forEachLoadCommand(void (load_command const*, bool&) block_pointer) const","symbolLocation":44,"imageIndex":1},{"imageOffset":267360,"symbol":"mach_o::UnsafeHeader::forEachSegment(void (mach_o::UnsafeHeader::SegmentInfo const&, bool&) block_pointer) const","symbolLocation":96,"imageIndex":1},{"imageOffset":264708,"symbol":"mach_o::UnsafeHeader::preferredLoadAddress() const","symbolLocation":96,"imageIndex":1},{"imageOffset":112364,"symbol":"dyld4::JustInTimeLoader::withRegions(dyld3::MachOFile const*, void (dyld3::Array<dyld4::Loader::Region> const&) block_pointer)","symbolLocation":48,"imageIndex":1},{"imageOffset":114576,"symbol":"dyld4::JustInTimeLoader::makeJustInTimeLoaderDisk(Diagnostics&, dyld4::RuntimeState&, char const*, dyld4::Loader::LoadOptions const&, bool, unsigned int, mach_o::Layout const*)","symbolLocation":1124,"imageIndex":1},{"imageOffset":125964,"symbol":"invocation function for block in dyld4::Loader::getLoader(Diagnostics&, dyld4::RuntimeState&, char const*, dyld4::Loader::LoadOptions const&)","symbolLocation":3592,"imageIndex":1},{"imageOffset":127068,"symbol":"invocation function for block in dyld4::Loader::forEachResolvedAtPathVar(dyld4::RuntimeState&, char const*, dyld4::Loader::LoadOptions const&, dyld4::ProcessConfig::PathOverrides::Type, bool&, void (char const*, dyld4::ProcessConfig::PathOverrides::Type, bool&) block_pointer)","symbolLocation":180,"imageIndex":1},{"imageOffset":256540,"symbol":"mach_o::UnsafeHeader::forEachLoadCommand(void (load_command const*, bool&) block_pointer) const","symbolLocation":200,"imageIndex":1},{"imageOffset":257488,"symbol":"mach_o::UnsafeHeader::forEachRPath(void (char const*, bool&) block_pointer) const","symbolLocation":72,"imageIndex":1},{"imageOffset":120508,"symbol":"dyld4::Loader::forEachResolvedAtPathVar(dyld4::RuntimeState&, char const*, dyld4::Loader::LoadOptions const&, dyld4::ProcessConfig::PathOverrides::Type, bool&, void (char const*, dyld4::ProcessConfig::PathOverrides::Type, bool&) block_pointer)","symbolLocation":412,"imageIndex":1},{"imageOffset":67176,"symbol":"dyld4::ProcessConfig::PathOverrides::forEachPathVariant(char const*, mach_o::Platform, bool, bool, bool&, void (char const*, dyld4::ProcessConfig::PathOverrides::Type, bool&) block_pointer) const","symbolLocation":508,"imageIndex":1},{"imageOffset":119672,"symbol":"dyld4::Loader::forEachPath(Diagnostics&, dyld4::RuntimeState&, char const*, dyld4::Loader::LoadOptions const&, void (char const*, dyld4::ProcessConfig::PathOverrides::Type, bool&) block_pointer)","symbolLocation":236,"imageIndex":1},{"imageOffset":121456,"symbol":"dyld4::Loader::getLoader(Diagnostics&, dyld4::RuntimeState&, char const*, dyld4::Loader::LoadOptions const&)","symbolLocation":828,"imageIndex":1},{"imageOffset":106188,"symbol":"invocation function for block in dyld4::JustInTimeLoader::loadDependents(Diagnostics&, dyld4::RuntimeState&, dyld4::Loader::LoadOptions const&)","symbolLocation":476,"imageIndex":1},{"imageOffset":263848,"symbol":"invocation function for block in mach_o::UnsafeHeader::forEachLinkedDylib(void (char const*, mach_o::LinkedDylibAttributes, mach_o::Version32, mach_o::Version32, bool, bool&) block_pointer) const","symbolLocation":128,"imageIndex":1},{"imageOffset":256540,"symbol":"mach_o::UnsafeHeader::forEachLoadCommand(void (load_command const*, bool&) block_pointer) const","symbolLocation":200,"imageIndex":1},{"imageOffset":263156,"symbol":"mach_o::UnsafeHeader::forEachLinkedDylib(void (char const*, mach_o::LinkedDylibAttributes, mach_o::Version32, mach_o::Version32, bool, bool&) block_pointer) const","symbolLocation":144,"imageIndex":1},{"imageOffset":105452,"symbol":"dyld4::JustInTimeLoader::loadDependents(Diagnostics&, dyld4::RuntimeState&, dyld4::Loader::LoadOptions const&)","symbolLocation":136,"imageIndex":1},{"imageOffset":46172,"symbol":"dyld4::prepare(dyld4::APIs&, mach_o::UnsafeHeader const*)","symbolLocation":712,"imageIndex":1},{"imageOffset":45144,"symbol":"_dyld_sim_prepare","symbolLocation":856,"imageIndex":1},{"imageOffset":141376,"symbol":"dyld4::prepareSim(dyld4::RuntimeState&, char const*)","symbolLocation":1300,"imageIndex":2},{"imageOffset":134304,"symbol":"dyld4::prepare(dyld4::APIs&, mach_o::UnsafeHeader const*)","symbolLocation":340,"imageIndex":2},{"imageOffset":133936,"symbol":"dyld4::start(dyld4::KernelArgs*, void*, void*, unsigned long long)::$_1::operator()() const","symbolLocation":320,"imageIndex":2},{"imageOffset":132236,"symbol":"start","symbolLocation":6904,"imageIndex":2}]}],
+  "usedImages" : [
+  {
+    "source" : "P",
+    "arch" : "arm64",
+    "base" : 4365074432,
+    "CFBundleShortVersionString" : "1.14",
+    "CFBundleIdentifier" : "com.openminis.app",
+    "size" : 39649280,
+    "uuid" : "eff76328-2be5-3dbf-a5c8-075f6bf4e717",
+    "path" : "\/Users\/USER\/Library\/Developer\/CoreSimulator\/Devices\/E839A11B-51B4-4AD3-ACF4-A53B95B7C957\/data\/Containers\/Bundle\/Application\/F28C6EF3-FF56-404F-B5D6-849A697FD59D\/Minis.app\/Minis",
+    "name" : "Minis",
+    "CFBundleVersion" : "1"
+  },
+  {
+    "source" : "P",
+    "arch" : "arm64",
+    "base" : 4497047552,
+    "size" : 327680,
+    "uuid" : "ba544d9a-46ab-3c59-a00f-aba1479d2079",
+    "path" : "\/Volumes\/VOLUME\/*\/dyld_sim",
+    "name" : "dyld_sim"
+  },
+  {
+    "source" : "P",
+    "arch" : "arm64e",
+    "base" : 4498358272,
+    "size" : 737280,
+    "uuid" : "74e52480-c2bd-3c8d-812d-95fe2b74a096",
+    "path" : "\/usr\/lib\/dyld",
+    "name" : "dyld"
+  },
+  {
+    "size" : 0,
+    "source" : "A",
+    "base" : 0,
+    "uuid" : "00000000-0000-0000-0000-000000000000"
+  }
+],
+  "vmSummary" : "ReadOnly portion of Libraries: Total=97.9M resident=0K(0%) swapped_out_or_unallocated=97.9M(100%)\nWritable regions: Total=40.2M written=225K(1%) resident=225K(1%) swapped_out=0K(0%) unallocated=40.0M(99%)\n\n                                VIRTUAL   REGION \nREGION TYPE                        SIZE    COUNT (non-coalesced) \n===========                     =======  ======= \nSTACK GUARD                       56.0M        1 \nStack                             8176K        1 \nVM_ALLOCATE                         16K        1 \nVM_ALLOCATE (reserved)            21.2M        4         reserved VM address space (unallocated)\n__AUTH_CONST                        32K        1 \n__DATA                            14.8M        5 \n__DATA_CONST                      11.2M        3 \n__DATA_DIRTY                        32K        2 \n__LINKEDIT                        59.0M        3 \n__LLVM_COV                        2592K        1 \n__TEXT                            38.8M        3 \n__TPRO_CONST                       160K        2 \ndyld private memory                3.0G        6 \nmapped file                        3.1G       30 \npage table in kernel               225K        1 \n===========                     =======  ======= \nTOTAL                              6.3G       64 \nTOTAL, minus reserved VM space     6.2G       64 \n",
+  "legacyInfo" : {
+  "threadTriggered" : {
+
+  }
+},
+  "logWritingSignature" : "92e607b67ce44b03866da804b1f925e6714d1e87",
+  "bug_type" : "309",
+  "roots_installed" : 0,
+  "trmStatus" : 2105344,
+  "trialInfo" : {
+  "rollouts" : [
+    {
+      "rolloutId" : "67181b10c68c361a728c7cfa",
+      "factorPackIds" : [
+
+      ],
+      "deploymentId" : 240000005
+    },
+    {
+      "rolloutId" : "5f72dc58705eff005a46b3a9",
+      "factorPackIds" : [
+
+      ],
+      "deploymentId" : 240000015
+    }
+  ],
+  "experiments" : [
+
+  ]
+},
+  "reportNotes" : [
+  "dyld_process_snapshot_get_shared_cache failed"
+]
+}

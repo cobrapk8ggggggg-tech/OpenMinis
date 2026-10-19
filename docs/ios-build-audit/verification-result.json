@@ -1,0 +1,16 @@
+{
+  "device_1_14_build": "success",
+  "device_1_12_arabic_build": "success",
+  "simulator_1_14_compile": "success",
+  "simulator_install": "success",
+  "simulator_launch_check": "failed",
+  "observed_termination": "CODESIGNING / Invalid Page while dyld_sim loads dependent images",
+  "full_entitlements_attempt": "CODESIGNING / Taskgated Invalid Signature",
+  "app_code_modified": false,
+  "device_run_id": 39180731699,
+  "old_arabic_run_id": 39187923547,
+  "simulator_build_run_id": 39188066958,
+  "simulator_runtime_run_id": 39189813878,
+  "physical_iphone_tested": false,
+  "model_api_tested": false
+}
