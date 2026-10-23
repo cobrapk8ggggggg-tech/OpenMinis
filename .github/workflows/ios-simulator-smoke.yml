@@ -25,7 +25,7 @@ jobs:
     - uses: actions/checkout@v4
       with:
         repository: cobrapk8ggggggg-tech/zeus
-        ref: ${{ inputs.source_ref || '5572427a7bb395e4feac0ee122f864612d089079' }}
+        ref: ${{ inputs.source_ref || 'b81d890cdea9df4168a08fa7ec106daf5216a47d' }}
         path: browser
         persist-credentials: false
     - name: Record the exact browser revision
