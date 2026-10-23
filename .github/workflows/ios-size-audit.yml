@@ -37,7 +37,7 @@ jobs:
           if ! xcrun --sdk iphonesimulator metal --version; then
             xcodebuild -downloadComponent MetalToolchain
           fi
-      - uses: actions/cache@v4
+      - uses: actions/cache/restore@v4
         id: native
         with:
           path: |
@@ -56,6 +56,16 @@ jobs:
           bash deps/build_ffmpeg.sh 2>&1 | tee ../results/ffmpeg.log
           bash deps/build_ish.sh 2>&1 | tee ../results/ish.log
           bash deps/prepare_alpine_rootfs.sh 2>&1 | tee ../results/rootfs.log
+      - uses: actions/cache/save@v4
+        if: steps.native.outputs.cache-hit != 'true'
+        with:
+          path: |
+            upstream/deps/libs
+            upstream/deps/include
+            upstream/deps/resources
+            upstream/deps/frameworks
+            upstream/deps/lame-build
+          key: openminis-6339bfcb-simulator-arm64-xcode263-v2
       - name: Build the original application and its original UI tests
         run: |
           set -euo pipefail

@@ -9,6 +9,7 @@ import hashlib
 import json
 from pathlib import Path
 import subprocess
+import xml.etree.ElementTree as ET
 
 
 def prepare(root: Path, sdk: str) -> dict:
@@ -43,6 +44,19 @@ def prepare(root: Path, sdk: str) -> dict:
             file.write_text(code)
     template = root / "src/ios/Configs/ProviderCustomization.xcconfig.example"
     template.with_suffix("").write_text(template.read_text())
+    # The upstream scheme also builds standalone command-line Swift scripts as
+    # part of MinisTests. Reference rendering uses its unchanged MinisUITests;
+    # select that target in the CI scheme rather than editing any test source.
+    scheme = root / "src/ios/Minis.xcodeproj/xcshareddata/xcschemes/Minis.xcscheme"
+    document = ET.parse(scheme)
+    testables = document.getroot().find("TestAction/Testables")
+    if testables is None:
+        raise RuntimeError("The original test scheme has no test targets")
+    for test in list(testables):
+        reference = test.find("BuildableReference")
+        if reference is None or reference.get("BlueprintName") != "MinisUITests":
+            testables.remove(test)
+    scheme.write_text(ET.tostring(document.getroot(), encoding="unicode"))
     return {"repository": expected["repository"], "commit": actual, "sdk": sdk,
             "applicationFilesSHA256": manifest}
 
